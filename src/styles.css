@@ -5,21 +5,13 @@
 }
 
 body {
-  /* background: #343a40; */
-  background: #101426;
-}
-.bg1 {
-  background-color: #211c36;
+  background: #343a40;
+  /* background: #101426; */
 }
 
-.bg2 {
-  background-color: #101426;
-}
-
-.tcol {
-  color: #211c36;
-}
-
-.bg3 {
-  background-color: #276ee9;
+footer {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
 }
