@@ -40,20 +40,33 @@ export const authenticate = (data, next) => {
   }
 };
 
-export const signout = (next) => {
-  if (typeof window !== 'undefined') {
-    localStorage.removeItem('jwt');
-    next();
+export const signout = async (next) => {
+  try {
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('jwt');
+    }
 
-    return fetch(`${API}/signout`, {
+    const response = await fetch(`${API}/signout`, {
       method: 'GET',
-    })
-      .then((response) => console.log('signout success'))
-      .catch((err) => console.log(err));
+    });
+
+    // Check the response status and handle accordingly
+    if (response.ok) {
+      console.log('Signout success');
+    } else {
+      console.log('Signout failed:', response.statusText);
+    }
+
+    // Call the next function to trigger the next action
+    next();
+  } catch (error) {
+    console.error('Error during signout:', error);
   }
 };
 
-export const isAutheticated = () => {
+
+
+export const isAuthenticated = () => {
   if (typeof window == 'undefined') {
     return false;
   }

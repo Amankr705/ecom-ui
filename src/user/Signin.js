@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import Base from '../core/Base';
 import { useNavigate } from 'react-router-dom';
 
-import { signin, authenticate, isAutheticated } from '../auth/helper';
+import { signin, authenticate, isAuthenticated } from '../auth/helper';
 
 const Signin = () => {
   const [values, setValues] = useState({
-    email: '',
-    password: '',
+    email: 'alok@gmail.com', //{Default values for admin login, kind of saved creds}
+    password: '124563',
     error: '',
     loading: false,
     didRedirect: false,
@@ -15,7 +15,7 @@ const Signin = () => {
 
   let navigate = useNavigate();
   const { email, password, error, loading, didRedirect } = values;
-  const { user } = isAutheticated();
+  const { user } = isAuthenticated();
 
   const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
@@ -52,7 +52,7 @@ const Signin = () => {
         return navigate('/user/dashboard');
       }
     }
-    if (isAutheticated()) {
+    if (isAuthenticated()) {
       return navigate('/');
     }
   };
