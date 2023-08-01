@@ -19,6 +19,11 @@ const AdminDashBoard = () => {
             </Link>
           </li>
           <li className="list-group-item">
+            <Link to="/admin/category/all" className="nav-link text-info">
+              Manage Categories
+            </Link>
+          </li>
+          <li className="list-group-item">
             <Link to="/admin/create/product" className="nav-link text-info">
               Create Product
             </Link>
@@ -52,7 +57,7 @@ const AdminDashBoard = () => {
             {email}
           </li>
           <li className="list-group-item">
-            <span className='bagde text-danger'>Admin Area</span>
+            <span className="bagde text-danger">Admin Area</span>
           </li>
         </ul>
       </div>
