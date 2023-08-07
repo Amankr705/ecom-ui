@@ -12,6 +12,7 @@ import ManageCategories from './admin/ManageCategories';
 import AddProduct from './admin/AddProduct';
 import ManageProducts from './admin/ManageProducts';
 import UpdateProduct from './admin/UpdateProduct';
+import Cart from './core/Cart';
 
 const AppRoutes = () => {
   return (
@@ -21,6 +22,7 @@ const AppRoutes = () => {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/Signup" element={<Signup />} />
           <Route exact path="/Signin" element={<Signin />} />
+          <Route exact path="/cart" element={<Cart />} />
           <Route
             path="/user/dashboard"
             element={<PrivateRoute element={UserDashBoard} />}
